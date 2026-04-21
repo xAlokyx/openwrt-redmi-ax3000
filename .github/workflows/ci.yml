@@ -185,6 +185,10 @@ jobs:
 
             ## SHA256
             $(cat bin/targets/ipq50xx/arm/sha256sums | awk '{printf "%s: `%s`\n", $2, $1}' | sed -E 's/^\*//')
+
+            ## Archives
+            - `bin-ipq50xx.tar.gz`
+            - `dl.tar.gz`
           EOF
 
           echo "NAME=$(head --line=1 Release.md)" >>$GITHUB_ENV
